@@ -11,13 +11,28 @@ set shiftwidth=4
 set path+=$PWD/include
 set path+=$PWD/*/include
 
-"Gruvbox
-set termguicolors
-colorscheme gruvbox
-set background=light
+""""PLUGIN"""""
 
-"Silver Searcher
+"Plugin manager
+call plug#begin('~/.vim/plugged')
+
+"Solarized color scheme
+Plug 'lifepillar/vim-solarized8'
+set background=light
+let g:solarized_extra_hi_groups=1
+colorscheme solarized8
+
+"The silver searcher
+Plug 'https://github.com/mileszs/ack.vim.git'
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
+"Coc.nvim
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+"Fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+call plug#end()
 
 "vim-go
 let g:go_def_mapping_enabled = 0

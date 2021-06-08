@@ -1,12 +1,8 @@
-"Plugin manager
-execute pathogen#infect()
-
 syntax on
 filetype plugin indent on
-filetype plugin on
 set number relativenumber
 set expandtab
-set clipboard=unnamedplus
+set clipboard^=unnamed,unnamedplus
 set hlsearch
 set tabstop=4
 set shiftwidth=4
@@ -15,9 +11,8 @@ set shiftwidth=4
 set path+=$PWD/include
 set path+=$PWD/*/include
 
-"Gruvbox
-set termguicolors
-colorscheme gruvbox
+"Solarized
+colorscheme solarized
 set background=light
 
 "Silver Searcher
