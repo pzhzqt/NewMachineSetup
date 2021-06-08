@@ -1,0 +1,5 @@
+#personal aliases
+alias vi='nvim'
+alias vim='nvim'
+alias xclip='xclip -sel c'
+alias fzf='vi $(\fzf)'
