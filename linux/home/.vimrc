@@ -1,12 +1,8 @@
-"Plugin manager
-execute pathogen#infect()
-
 syntax on
 filetype plugin indent on
-filetype plugin on
 set number relativenumber
 set expandtab
-set clipboard=unnamedplus
+set clipboard^=unnamed,unnamedplus
 set hlsearch
 set tabstop=4
 set shiftwidth=4
