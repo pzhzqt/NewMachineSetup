@@ -11,16 +11,15 @@ set shiftwidth=4
 set path+=$PWD/include
 set path+=$PWD/*/include
 
+"Color scheme
+set termguicolors
+colorscheme morning
+
+
 """"PLUGIN"""""
 
 "Plugin manager
 call plug#begin('~/.vim/plugged')
-
-"Solarized color scheme
-Plug 'lifepillar/vim-solarized8'
-set background=light
-let g:solarized_extra_hi_groups=1
-colorscheme solarized8
 
 "The silver searcher
 Plug 'https://github.com/mileszs/ack.vim.git'
