@@ -31,14 +31,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
+"Copilot
+Plug 'github/copilot.vim'
+
 call plug#end()
-
-"vim-go
-let g:go_def_mapping_enabled = 0
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
-let g:go_code_completion_enabled = 0
-
-"change up/down from physical line to display line
-"noremap <silent> k gk
-"noremap <silent> j gj
