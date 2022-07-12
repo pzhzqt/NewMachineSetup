@@ -1,18 +1,4 @@
 {
-    "languageserver": {
-        "golang": {
-            "command": "~/go/bin/gopls",
-            "rootPatterns": [
-                "go.mod",
-                ".vim/",
-                ".git/",
-                ".hg/"
-            ],
-            "filetypes": [
-                "go"
-            ]
-        }
-    },
     "coc.preferences.formatOnSaveFiletypes": [
         "python",
         "h",
@@ -20,7 +6,9 @@
         "cc",
         "hpp",
         "c",
-        "json"
+        "rust",
+        "json",
+        "go"
     ],
     "clangd.arguments": [
         "-cross-file-rename"
