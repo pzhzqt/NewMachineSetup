@@ -6,6 +6,7 @@ set clipboard^=unnamed,unnamedplus
 set hlsearch
 set tabstop=4
 set shiftwidth=4
+set tagfunc=CocTagFunc
 
 "Automatically add project's include to path so gf works
 set path+=$PWD/include
