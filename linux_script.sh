@@ -3,12 +3,7 @@
 # may need root, and need PM set to your package manager
 
 ${PM} install neovim
-${PM} install fzf
-${PM} install the_silver_searcher
+${PM} install nodejs
 
-#nodejs, coc.nvim's dependency (not working for some reason, need manual install)
-#${PM} install node 
-
-#vim plugin manager
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+#lunarvim
+LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
