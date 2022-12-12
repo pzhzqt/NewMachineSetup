@@ -97,6 +97,11 @@ lvim.builtin.treesitter.highlight.enable = true
 lvim.lsp.installer.setup.ensure_installed = {
   "clangd",
 }
+-- for clangd to not conflict with copilot
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.offsetEncoding = { "utf-16" }
+require("lspconfig").clangd.setup({ capabilities = capabilities })
+
 -- -- change UI setting of `LspInstallInfo`
 -- -- see <https://github.com/williamboman/nvim-lsp-installer#default-configuration>
 -- lvim.lsp.installer.setup.ui.check_outdated_servers_on_open = false
@@ -167,7 +172,51 @@ lvim.lsp.installer.setup.ensure_installed = {
 
 -- Additional Plugins
 lvim.plugins = {
-  { "kelly-lin/telescope-ag", requires = { { "nvim-telescope/telescope.nvim" } } }
+  { "kelly-lin/telescope-ag", requires = { { "nvim-telescope/telescope.nvim" } } },
+  { "zbirenbaum/copilot.lua",
+    event = { "VimEnter" },
+    config = function()
+      vim.defer_fn(function()
+        require('copilot').setup({
+          panel = {
+            enabled = true,
+            auto_refresh = true,
+            keymap = {
+              jump_prev = "[[",
+              jump_next = "]]",
+              accept = "<CR>",
+              refresh = "gr",
+              open = "<M-CR>"
+            },
+          },
+          suggestion = {
+            enabled = true,
+            auto_trigger = true,
+            debounce = 75,
+            keymap = {
+              accept = "<tab>",
+              next = "<M-]>",
+              prev = "<M-[>",
+              dismiss = "<C-]>",
+            },
+          },
+          filetypes = {
+            yaml = false,
+            markdown = false,
+            help = false,
+            gitcommit = false,
+            gitrebase = false,
+            hgcommit = false,
+            svn = false,
+            cvs = false,
+            ["."] = false,
+          },
+          copilot_node_command = 'node', -- Node.js version must be > 16.x
+          server_opts_overrides = {},
+        })
+      end, 100)
+    end
+  }
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
