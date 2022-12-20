@@ -1,0 +1,4 @@
+Lunarvim:
+Show keymaps: :Telescope keymaps
+Apply clangd suggestions: :Telescope lsp_code_actions(default mapped to <space>la)
+Sync plugings: :PackerSync
